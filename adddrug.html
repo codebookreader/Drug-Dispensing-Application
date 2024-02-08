@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="drugform.css" />
+
+    <title>LOGIN</title>
+    
+  </head>
+  <body>
+    <div class="container">
+            <div class = "form" id="form">
+              <form action="adddrug.php" method="post" enctype="multipart/form-data">
+                 <h1 class="h1">Add Drug</h1>
+                 <ul>DrugID: <input id="drugid" type="number"placeholder="Enter the drug's ID" name="drugid"/><br/></ul>
+                 <ul> Drug Name: <input id="frugname" type="text" name="drugname" placeholder="Enter the drug's name"/><br/></ul>
+                 <ul>Category: <input id="category" type="text" placeholder="Enter drug category" name="category"/><br/></ul>  
+                 <ul>Provider:<input id="provider" type="text" name="provider" placeholder="Enter drug provider"/><br/></ul>       
+                 <ul>Dosage:<input id="dosage" type="text" name="dosage" placeholder="Enter drug dosage"/><br/></ul>       
+                <div class= "image" ><input id="image" class="file-upload-input" name="image" type="file" onchange="readURL(this)" accept="Image/*"></div><
+                 <input type="submit" class= "form_button" name="submit" id="submit"/>
+                </form>
+            </div>
+    </div>
+    
+
+</div>
+  </body>
+</html>

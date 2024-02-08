@@ -1,0 +1,80 @@
+body {
+    background-image: url('adminimage.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+  }
+                  ul {
+                    position:relative;
+                    top:40px;
+                    bottom:auto;
+                    right: 45px;
+                    left: 155px;
+                    list-style-type: none;
+                    margin: 0;
+                    padding: 6px;
+                    overflow: hidden;
+                    width: 750px;
+                  
+                    place-items: center;
+                    background-color: #30D5C8;
+                  }
+                  
+                  li {
+                    float: left;
+                  }
+                  
+                  li a {
+                    display: block;
+                    color: white;
+                    text-align: center;
+                    padding: 14px 16px;
+                    text-decoration: none;
+                  }
+                  
+                  li a:hover {
+                    background-color: #111;
+                  }
+  
+                  .example {
+                  display: block;
+                  margin-left: auto;
+                  margin-right: auto;
+                  height: 380px;
+                  width: 950px;
+                  left: 1060px;
+  }
+
+                  .termsandconditions  {
+                    position: relative;
+                    top: 600px;
+                    bottom: 800px;
+                    background-color: black;
+                    display: block;
+                    color: white;
+                    text-align: center;
+                    padding: 16px;
+                    text-decoration: none;
+                    width: 759px;
+                    margin-left: auto;
+                    margin-right: auto;
+                  }
+                  h1 + p{
+                    font-size: '200%';
+                    font-family: 'Arial Rounded MT';
+                  }
+                  
+                  .display{
+                    position: relative;
+                    font-family: 'Arial Rounded MT';
+                    left: 750px;
+                  }
+                  .login-content {
+                    text-align: right; /* Align the content to the right */
+                }
+                
+                .login-message {
+                    display: inline-block; /* Make the message and link appear in a line */
+                    margin-right: -100px; /* Add some spacing between the message and link */
+                }
+  
