@@ -1,37 +1,42 @@
 <?php
 // require_once("registration.html");
 print_r('User Registered Successfully!');
-if ($_SERVER["REQUEST_METHOD"] == "POST") { 
-    $patientid = $_POST['patientid'];
+
+// Use isset to check if the key exists in the $_POST array
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['ssn'], $_POST['name'], $_POST['age'], $_POST['email'], $_POST['password'])) {
+    $ssn = $_POST['ssn'];
     $name = $_POST['name'];
     $age = $_POST['age'];
     $email = $_POST['email'];
     $userPassword = $_POST['password']; // Use a different variable name
-}
 
-$host = "localhost";
-$dbname = "drugdispensing";
-$username = "root";
-$databasePassword = "#1Rurilongstaff1"; // Rename the variable
+    $host = "localhost";
+    $dbname = "drugdispensing";
+    $username = "root";
+    $databasePassword = "#1Rurilongstaff1"; // Rename the variable
 
-$conn = mysqli_connect($host, $username, $databasePassword, $dbname);
+    $conn = mysqli_connect($host, $username, $databasePassword, $dbname);
 
-if (mysqli_connect_errno()) {
-    die("Connection error: " . mysqli_connect_error());
+    if (mysqli_connect_errno()) {
+        die("Connection error: " . mysqli_connect_error());
+    } else {
+        $stmt = $conn->prepare("INSERT INTO patient (ssn, name, age, email, password) VALUES (?, ?, ?, ?, ?)");
+
+        if (!$stmt) {
+            die("Prepare failed: " . $conn->error);
+        }
+
+        $stmt->bind_param("isiss", $ssn, $name, $age, $email, $userPassword); // Use the new variable
+
+        if (!$stmt->execute()) {
+            die("Execute failed: " . $stmt->error);
+        }
+
+        $stmt->close();
+        $conn->close();
+    }
 } else {
-    $stmt = $conn->prepare("INSERT INTO patient (patientid, name, age, email, password) VALUES (?, ?, ?, ?, ?)");
-    
-    if (!$stmt) {
-        die("Prepare failed: " . $conn->error);
-    }
-    
-    $stmt->bind_param("isiss", $patientid, $name, $age, $email, $userPassword); // Use the new variable
-    
-    if (!$stmt->execute()) {
-        die("Execute failed: " . $stmt->error);
-    }
-
-    $stmt->close();
-    $conn->close();
+    // Handle the case where not all required fields are provided in $_POST
+    echo "Missing required form fields.";
 }
 ?>
