@@ -5,10 +5,10 @@ ini_set('display_errors', 1);
 print_r($_POST);
 
 // Use isset to check if the key exists in the $_POST array
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['docid'], $_POST['name'], $_POST['email'], $_POST['password'], $_POST['drugid'], $_POST['patientid'])) {
-    $docid = $_POST['docid'];
-    $docname = $_POST['docname']; // Update to 'name' instead of 'docname'
-    $docemail = $_POST['email'];
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['doctorid'], $_POST['doctorname'], $_POST['docemail'], $_POST['password'], $_POST['drugid'], $_POST['patientid'])) {
+    $doctorid = $_POST['doctorid'];
+    $doctorname = $_POST['doctorname']; // Update to 'name' instead of 'docname'
+    $docemail = $_POST['docemail'];
     $docpassword = $_POST['password'];
     $drugid = $_POST['drugid'];
     $patientid = $_POST['patientid'];
@@ -24,13 +24,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['docid'], $_POST['name'
     if (mysqli_connect_errno()) {
         die("Connection error: " . mysqli_connect_error());
     } else {
-        $stmt = $conn->prepare("INSERT INTO doctor (docid, docname, docemail, password, drugid, patientid) VALUES (?, ?, ?, ?, ?)");
+        $stmt = $conn->prepare("INSERT INTO doctor (doctorid, doctorname, docemail, password, drugid, patientid) VALUES (?, ?, ?, ?, ?, ?)");
 
         if (!$stmt) {
             die("Prepare failed: " . $conn->error);
         }
 
-        $stmt->bind_param("isssii", $docid, $docname, $docemail, $docpassword, $drugid, $patientid); // Use the new variable
+        $stmt->bind_param("isssii", $doctorid, $doctorname, $docemail, $docpassword, $drugid, $patientid); // Use the new variable
 
         if (!$stmt->execute()) {
             die("Execute failed: " . $stmt->error);
