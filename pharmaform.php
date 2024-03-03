@@ -3,11 +3,11 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 print_r($_POST);
 
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['pharmaid'], $_POST['phamraname'], $_POST['pharmaemail'], $_POST['phamrapass'], $_POST['drugid'], $_POST['patientid'])) {
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['pharmaid'], $_POST['pharmaname'], $_POST['pharmaemail'], $_POST['pharmapass'], $_POST['drugid'], $_POST['patientid'])) {
     $pharmaid = $_POST['pharmaid'];
     $pharmaname = $_POST['pharmaname'];
     $pharmaemail = $_POST['pharmaemail'];
-    $pharmapassword = $_POST['pharmapass'];
+    $password = $_POST['pharmapass'];
     $drugid = $_POST['drugid'];
     $patientid = $_POST['patientid'];
 
@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['pharmaid'], $_POST['ph
             die("Prepare failed: " . $conn->error);
         }
 
-        $stmt->bind_param("isssii", $pharmaid, $pharmaname, $pharmaemail, $pharmapass, $drugid, $patientid);
+        $stmt->bind_param("isssii", $pharmaid, $pharmaname, $pharmaemail, $password, $drugid, $patientid);
 
         if (!$stmt->execute()) {
             die("Execute failed: " . $stmt->error);
