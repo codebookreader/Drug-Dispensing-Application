@@ -3,11 +3,11 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 print_r($_POST);
 
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['pharmaid'], $_POST['pharmaname'], $_POST['pharmaemail'], $_POST['pharmapass'], $_POST['drugid'], $_POST['patientid'])) {
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['pharmaid'], $_POST['pharmaname'], $_POST['pharmaemail'], $_POST['password'], $_POST['drugid'], $_POST['patientid'])) {
     $pharmaid = $_POST['pharmaid'];
     $pharmaname = $_POST['pharmaname'];
     $pharmaemail = $_POST['pharmaemail'];
-    $password = $_POST['pharmapass'];
+    $password = $_POST['password'];
     $drugid = $_POST['drugid'];
     $patientid = $_POST['patientid'];
 
