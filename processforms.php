@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['adminid'], $_POST['nam
             die("Prepare failed: " . $conn->error);
         }
 
-        $stmt->bind_param("isiss", $adminid, $name, $ssn, $email, $Password); // Use the new variable
+        $stmt->bind_param("isiss", $adminid, $name, $ssn, $email, $password); // Use the new variable
 
         if (!$stmt->execute()) {
             die("Execute failed: " . $stmt->error);
