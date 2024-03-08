@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['adminid'], $_POST['nam
     if (mysqli_connect_errno()) {
         die("Connection error: " . mysqli_connect_error());
     } else {
-        $stmt = $conn->prepare("INSERT INTO patient ( adminid, name, ssn, email, password) VALUES (?, ?, ?, ?, ?)");
+        $stmt = $conn->prepare("INSERT INTO administrator ( adminid, name, ssn, email, password) VALUES (?, ?, ?, ?, ?)");
 
         if (!$stmt) {
             die("Prepare failed: " . $conn->error);
