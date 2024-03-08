@@ -3,12 +3,12 @@
 print_r('User Registered Successfully!');
 
 // Use isset to check if the key exists in the $_POST array
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['ssn'], $_POST['name'], $_POST['age'], $_POST['email'], $_POST['password'])) {
-    $ssn = $_POST['ssn'];
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['adminid'], $_POST['name'], $_POST['ssn'], $_POST['email'], $_POST['password'])) {
+   // $adminid = $_POST['adminid'];
     $name = $_POST['name'];
-    $age = $_POST['age'];
+    $ssn = $_POST['ssn'];
     $email = $_POST['email'];
-    $userPassword = $_POST['password']; // Use a different variable name
+    $password = $_POST['password']; // Use a different variable name
 
     $host = "localhost";
     $dbname = "drugdispensing";
@@ -20,13 +20,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['ssn'], $_POST['name'],
     if (mysqli_connect_errno()) {
         die("Connection error: " . mysqli_connect_error());
     } else {
-        $stmt = $conn->prepare("INSERT INTO patient (ssn, name, age, email, password) VALUES (?, ?, ?, ?, ?)");
+        $stmt = $conn->prepare("INSERT INTO patient ( name, ssn, email, password) VALUES (?, ?, ?, ?, ?)");
 
         if (!$stmt) {
             die("Prepare failed: " . $conn->error);
         }
 
-        $stmt->bind_param("isiss", $ssn, $name, $age, $email, $userPassword); // Use the new variable
+        $stmt->bind_param("siss", /*$adminid,*/ $name, $ssn, $email, $Password); // Use the new variable
 
         if (!$stmt->execute()) {
             die("Execute failed: " . $stmt->error);
