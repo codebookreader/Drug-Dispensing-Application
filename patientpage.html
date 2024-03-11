@@ -4,11 +4,24 @@
     <meta charset="UTF-8">
     <title>Your Title Here</title>
     <link rel="stylesheet" href="css/bootstrap.css">
+    <style>
+      .bg-light {
+    --bs-bg-opacity: 0;
+    background-color: rgba(var(--bs-light-rgb), var(--bs-bg-opacity)) !important;
+}
+      /* Custom style to remove the rectangle around the text */
+      .navbar-brand {
+            outline: none !important; /* Remove the default outline */
+            border: none !important;  /* Remove the default border */
+            font-size: 40px;
+        }
+  </style>
 </head>
 <body>    
     <!-- As a heading -->
+    <nav class="navbar navbar-light" style="background-color: #821de0;">
     <nav class="navbar navbar-light bg-light">
-      <span class="navbar-brand mb-0 h1">    Patient</span>
+      <span class="navbar-brand mb-0 h1 text-white">Patient</span>
     </nav>
 
     <!-- Bootstrap JavaScript and Popper.js (order matters) -->
