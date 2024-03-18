@@ -12,7 +12,7 @@
         <div class="Menu">
             <div class=display>
             <?php
-require_once("login.php");
+session_start(); // Start the session
 
 $name = isset($_SESSION['name']) ? $_SESSION['name'] : '';
 
