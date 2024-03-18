@@ -1,9 +1,8 @@
 <?php
 //require_once("registration.html");
 if ($_SERVER["REQUEST_METHOD"] == "POST") { 
-$ssn = $_POST['ssn'];
+$email = $_POST['email'];
 $password = $_POST['password'];
-$name = $_POST['name'];
 
 }
 

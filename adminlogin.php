@@ -1,41 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Patient Login</title>
-    <link rel="stylesheet" type="text/css" href="registration.css" />
-</head>
-<body>
-    <div class="container">
-        <h2>Administrator Login</h2>
-        <form action="login.php" method="POST">
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" required>
-            </div>
-            <button type="submit" name="login">Login</button>
-        </form>
-    </div>
-</body>
-</html>
-
 <?php
 // Start the session
 session_start();
 
-// Check if the user is already logged in, redirect to index.php if true
 if (isset($_SESSION["user"])) {
-   header("Location: index.php");
+   header("Location: administrator.php");
    exit();
 }
 
 // Include your database connection logic here
-require_once("loginconn.php");
+require_once("adminconn.php");
 
 // Check if the form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -68,3 +41,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--<img src="adminimage.jpg" alt="Description for image" width="1200" height="600" class="example">-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="registration.css" />
+</head>
+<body>
+
+        <div class = "form" id="form" name="form">
+        <form method="post" action="adminlogin.php">
+            <h1 class="h1">Login</h1>
+            <div class = "email"><ul>Email: <input type="email" name="email" placeholder="Enter your email"/> <br/></ul></div>
+            <div class = "ssn"><ul>Password: <input type="password" name="password" placeholder="Enter your password"/> <br/></ul></div>
+                <input class= "form_button" type="Submit"/></br>
+                <div class="others">
+               Not registered yet? Click <a href="registration.html">here</a> to register
+            </div>
+        </form>
+        </div> 
+</body>
+</html>
