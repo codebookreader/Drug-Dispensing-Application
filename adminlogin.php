@@ -16,6 +16,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST["email"];
     $password = $_POST["password"];
     
+    // Debugging output (remove in production)
+    echo "Email: " . $email . "<br>";
+    echo "Password: " . $password . "<br>";
+    
     // Validate the form data (you may add more validation as needed)
     if (!empty($email) && !empty($password)) {
         // Perform your login authentication logic here (e.g., querying the database)
@@ -29,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($result->num_rows == 1) {
             // User authenticated successfully, set session variable and redirect
             $_SESSION["user"] = $email;
-            header("Location: index.php");
+            header("Location: administrator.php");
             exit();
         } else {
             // Invalid credentials, display error message
@@ -53,16 +57,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body>
 
-        <div class = "form" id="form" name="form">
-        <form method="post" action="adminlogin.php">
-            <h1 class="h1">Login</h1>
-            <div class = "email"><ul>Email: <input type="email" name="email" placeholder="Enter your email"/> <br/></ul></div>
-            <div class = "ssn"><ul>Password: <input type="password" name="password" placeholder="Enter your password"/> <br/></ul></div>
-                <input class= "form_button" type="Submit"/></br>
-                <div class="others">
-               Not registered yet? Click <a href="registration.html">here</a> to register
-            </div>
-        </form>
-        </div> 
+<div class="form" id="form" name="form">
+    <form method="post" action="adminlogin.php">
+        <h1 class="h1">Login</h1>
+        <div class="email"><ul>Email: <input type="email" name="email" placeholder="Enter your email"/> <br/></ul></div>
+        <div class="ssn"><ul>Password: <input type="password" name="password" placeholder="Enter your password"/> <br/></ul></div>
+        <input class="form_button" type="Submit"/></br>
+        <div class="others">
+            Not registered yet? Click <a href="registration.html">here</a> to register
+        </div>
+    </form>
+</div>
+
 </body>
 </html>
