@@ -22,7 +22,7 @@ if ($name !== '') {
     echo '<div class="logout-link"><a href="logout.php">Logout</a></div>';
     echo '</div>';
 } else {
-    echo '<div class="login-message">Please <a href="login.html">login</a> to access features.</div>';
+    echo '<div class="login-message">Please <a href="adminlogin.html">login</a> to access features.</div>';
 }
 ?>
             </div>

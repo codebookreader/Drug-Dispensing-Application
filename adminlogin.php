@@ -16,10 +16,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST["email"];
     $password = $_POST["password"];
     
-    // Debugging output (remove in production)
-    echo "Email: " . $email . "<br>";
-    echo "Password: " . $password . "<br>";
-    
     // Validate the form data (you may add more validation as needed)
     if (!empty($email) && !empty($password)) {
         // Perform your login authentication logic here (e.g., querying the database)
