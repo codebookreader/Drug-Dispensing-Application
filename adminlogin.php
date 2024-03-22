@@ -2,7 +2,7 @@
 // Start the session
 session_start();
 
-if (isset($_SESSION["user"])) {
+if (isset($_SESSION["name"])) {
    header("Location: administrator.php");
    exit();
 }
@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         
         if ($result->num_rows == 1) {
             // User authenticated successfully, set session variable and redirect
-            $_SESSION["user"] = $email;
+            $_SESSION["name"] = $email;
             header("Location: administrator.php");
             exit();
         } else {
