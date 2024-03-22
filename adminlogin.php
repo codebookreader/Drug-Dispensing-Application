@@ -14,21 +14,22 @@ require_once("adminconn.php");
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Get the form data
     $email = $_POST["email"];
+    $name = $_POST["name"];
     $password = $_POST["password"];
     
     // Validate the form data (you may add more validation as needed)
-    if (!empty($email) && !empty($password)) {
+    if (!empty($email) && !empty($password) && !empty($name)) {
         // Perform your login authentication logic here (e.g., querying the database)
         // Example:
-        $sql = "SELECT * FROM administrator WHERE email = ? AND password = ?";
+        $sql = "SELECT * FROM administrator WHERE Email = ? AND Password = ? AND Name = ?";
         $stmt = $conn->prepare($sql);
-        $stmt->bind_param("ss", $email, $password);
+        $stmt->bind_param("sss", $email, $password, $name);
         $stmt->execute();
         $result = $stmt->get_result();
         
-        if ($result->num_rows == 1) {
+        if ($result->num_rows == 3) {
             // User authenticated successfully, set session variable and redirect
-            $_SESSION["name"] = $email;
+            $_SESSION["name"] = $name;
             header("Location: administrator.php");
             exit();
         } else {
@@ -57,6 +58,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <form method="post" action="adminlogin.php">
         <h1 class="h1">Login</h1>
         <div class="email"><ul>Email: <input type="email" name="email" placeholder="Enter your email"/> <br/></ul></div>
+        <div class="name"><ul>Name: <input type="text" name="name" placeholder="Enter your naem"/> <br/></ul></div>
         <div class="ssn"><ul>Password: <input type="password" name="password" placeholder="Enter your password"/> <br/></ul></div>
         <input class="form_button" type="Submit"/></br>
         <div class="others">
