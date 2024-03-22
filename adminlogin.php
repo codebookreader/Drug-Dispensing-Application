@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->execute();
         $result = $stmt->get_result();
         
-        if ($result->num_rows == 3) {
+        if ($result->num_rows > 0) {
             // User authenticated successfully, set session variable and redirect
             $_SESSION["name"] = $name;
             header("Location: administrator.php");
