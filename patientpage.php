@@ -1,6 +1,6 @@
 <?php
 // Start the session
-session_start();
+/*session_start();
 
 // Check if the patient is logged in
 if (isset($_SESSION['patient_username'])) {
@@ -10,7 +10,7 @@ if (isset($_SESSION['patient_username'])) {
     // Patient is not logged in, redirect to login page or perform other actions
     header("Location: login.php"); // Replace 'login.php' with the actual login page
     exit();
-}
+}*/
 ?>
 
 <!DOCTYPE html>
@@ -40,61 +40,8 @@ if (isset($_SESSION['patient_username'])) {
     </nav>
 
 
-    <!-- Rotating card -->
-<div class="card-wrapper">
-  <div id="card-1" class="card card-rotating text-center">
 
-    <!-- Front Side -->
-    <div class="face front">
 
-      <!-- Image-->
-      <div class="card-up">
-        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/photo7.webp" alt="Image with a photo of clouds.">
-      </div>
-
-      <!-- Avatar -->
-      <div class="avatar mx-auto white"><img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(20).webp" class="rounded-circle"
-          alt="Sample avatar image.">
-      </div>
-
-      <!-- Content -->
-      <div class="card-body">
-        <h4 class="font-weight-bold mb-3">Marie Johnson</h4>
-        <p class="font-weight-bold blue-text">Web developer</p>
-        <!-- Triggering button -->
-        <a class="rotate-btn" data-card="card-1"><i class="fas fa-redo-alt"></i> Click here to rotate</a>
-      </div>
-    </div>
-    <!-- Front Side -->
-
-    <!-- Back Side -->
-    <div class="face back">
-      <div class="card-body">
-
-        <!-- Content -->
-        <h4 class="font-weight-bold mb-0">About me</h4>
-        <hr>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat tenetur odio suscipit non commodi vel
-          eius veniam maxime?
-          <hr>
-          <!-- Social Icons -->
-          <ul class="list-inline py-2">
-            <li class="list-inline-item"><a class="p-2 fa-lg fb-ic"><i class="fab fa-facebook-f"></i></a></li>
-            <li class="list-inline-item"><a class="p-2 fa-lg tw-ic"><i class="fab fa-twitter"></i></a></li>
-            <li class="list-inline-item"><a class="p-2 fa-lg gplus-ic"><i class="fab fa-google-plus-g"></i></a></li>
-            <li class="list-inline-item"><a class="p-2 fa-lg li-ic"><i class="fab fa-linkedin-in"></i></a></li>
-          </ul>
-          <!-- Triggering button -->
-          <a class="rotate-btn" data-card="card-1"><i class="fas fa-undo"></i> Click here to rotate back</a>
-
-      </div>
-    </div>
-    <!-- Back Side -->
-
-  </div>
-</div>
-<!-- Rotating card -->
     <!-- Bootstrap JavaScript and Popper.js (order matters) -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-vf5UQw1Cqz3Zp2qLzZw+3ltf1Z9K9j9mO8qD3i6FhAqEMZMZ4A1OhxlEDa6P5Na" crossorigin="anonymous"></script>
