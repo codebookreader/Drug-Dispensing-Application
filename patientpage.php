@@ -39,6 +39,12 @@ if (isset($_SESSION['patient_username'])) {
       <span class="navbar-brand mb-0 h1 text-white">Patient</span>
     </nav>
 
+      <div class="container">
+       <div class="card">
+       <div class="front"></div>
+       <div class="back>
+       <h1>Front of Card</h1>
+
 
 
 
