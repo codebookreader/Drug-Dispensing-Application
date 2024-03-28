@@ -1,4 +1,12 @@
-body{
-    background: linear-gradient(60deg, #061de3, #e306ca) !important;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+body{
+    height: 100vh;
+    overflow: hidden;
+    background: linear-gradient(60deg, #061de3, #e306ca) !important;
+    
 }

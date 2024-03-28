@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <title>PHARMACIST</title>
-        <link rel="stylesheet" href="pages.css" />
+        <link rel="stylesheet" href="pages.css">
         
     </head>
     <body>
