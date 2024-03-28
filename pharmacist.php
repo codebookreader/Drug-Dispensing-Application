@@ -4,9 +4,8 @@
     <head>
         <meta charset="UTF-8">
         <title>PHARMACIST</title>
-        <link rel="stylesheet" type="text/css" href="user.css" />
-        <link rel="stylesheet" href="css/bootstrap.css"></style>
-<script src="js/bootstrap.js"></script>
+        <link rel="stylesheet" type="text/css" href="pages.css" />
+        <script src="js/bootstrap.js"></script>
     </head>
     <body>
         <h1 style="float: left;font-family:'Arial Rounded MT';font-size:28px">Pharmacist</h1>

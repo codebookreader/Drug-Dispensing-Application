@@ -42,8 +42,13 @@ if (isset($_SESSION['patient_username'])) {
       <div class="container">
        <div class="card">
        <div class="front"></div>
-       <div class="back>
+       <div class="back">
        <h1>Front of Card</h1>
+       <p>Additonal infor</p>
+       </div>
+       </div>
+      </div>
+      
 
 
 
