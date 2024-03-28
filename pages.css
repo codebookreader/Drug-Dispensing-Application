@@ -1,4 +1,4 @@
-.body{
-    background: linear-gradient(60deg, #061de3, #e306ca);
+body{
+    background: linear-gradient(60deg, #061de3, #e306ca) !important;
 
 }

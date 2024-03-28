@@ -4,8 +4,8 @@
     <head>
         <meta charset="UTF-8">
         <title>PHARMACIST</title>
-        <link rel="stylesheet" type="text/css" href="pages.css" />
-        <script src="js/bootstrap.js"></script>
+        <link rel="stylesheet" href="pages.css" />
+        
     </head>
     <body>
         <h1 style="float: left;font-family:'Arial Rounded MT';font-size:28px">Pharmacist</h1>
@@ -13,7 +13,7 @@
         <div class="Menu">
             <div class=display>
             <?php
-require_once("login.php");
+
 
 $name = isset($_SESSION['name']) ? $_SESSION['name'] : '';
 
